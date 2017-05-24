@@ -23,7 +23,7 @@ module.exports.translate = function(load){
 
   load.source = load.source
     .replace(templateUrlRegex, function(match, quote, url){
-      var resolvedUrl = url;
+      let resolvedUrl = url;
 
       if (url.startsWith('.')) {
         resolvedUrl = basePath + url.substr(1);
