@@ -5,6 +5,8 @@ import { HttpModule }    from '@angular/http';
 
 import { AppRoutingModule } from './app-routing.module';
 
+import { AzureadTestComponent } from './azuread-test.component';
+
 // Imports for loading & configuring the in-memory web api
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService }  from './in-memory-data.service';
@@ -26,6 +28,7 @@ import { HeroSearchComponent }  from './hero-search.component';
   ],
   declarations: [
     AppComponent,
+    AzureadTestComponent,
     DashboardComponent,
     HeroDetailComponent,
     HeroesComponent,
