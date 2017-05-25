@@ -1,6 +1,8 @@
 import { Http, Headers } from '@angular/http';
 import { Injectable, NgModule } from '@angular/core';
 
+declare var o365AdalDbg: any;
+
 @Injectable()
 export class o365Adal  {
     private config: any = {
@@ -33,6 +35,7 @@ export class o365Adal  {
     }
 
     constructor(private http: Http) {
+        o365AdalDbg = this;
         this.authContext = new AuthenticationContext(this.config);
         this.handleLogInCallBack();
     }
@@ -57,6 +60,7 @@ export class o365Adal  {
                     alert('ADAL error occurred: ' + error);
                     return;
                 } else {
+                    console.log(`Got a token! '${token}'`);
                     resolve(token);
                 }
             }).fail(function () {
