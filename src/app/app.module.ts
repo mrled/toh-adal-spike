@@ -5,6 +5,7 @@ import { HttpModule }    from '@angular/http';
 
 import { AppRoutingModule } from './app-routing.module';
 
+import { o365Adal } from './o365-adal.service';
 import { AzureadTestComponent } from './azuread-test.component';
 
 // Imports for loading & configuring the in-memory web api
@@ -33,8 +34,12 @@ import { HeroSearchComponent }  from './hero-search.component';
     HeroDetailComponent,
     HeroesComponent,
     HeroSearchComponent
+    //,AzureAdProtectDirective
   ],
-  providers: [ HeroService ],
+  providers: [
+    HeroService,
+    o365Adal
+  ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }
